@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>YelpCamp</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+	<style type="text/css">
+		#ui
+		{
+			background-color: rgba(100,100,100,0,6);
+			border-style: solid;
+			border-radius: 10px;
+			border-color: rgba(255,255,0,0.7);
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header"><a class="navbar-brand" href="/">YelpCamp</a></div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-right navbar-nav">
+					<% if(!currentUser){ %>
+						<li><a href="/login">Login</a></li>
+						<li><a href="/register">Signup</a></li>
+					<% } else { %>
+						<li><a><b><%= currentUser.username %></b></a></li>
+						<li><a href="/logout">Logout</a></li>
+					<% } %>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<% if(success && success.length > 0) { %>
+			<div class="alert alert-success">
+				<%= success %>
+			</div>
+		<% } %>
+		<% if(error && error.length > 0) { %>
+			<div class="alert alert-danger">
+				<%= success %>
+			</div>
+		<% } %>
+	</div>
+	<div class="container">
+		<div id="ui" class="row" style="width: 40%; margin: 0 auto; padding: 10px;">
+			<h1 style="text-align: center;">Edit Comment :</h1><br><br><hr>
+			<form class="form-group" action="/campgrounds/<%= campground_id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+				<input class="form-control" type="text" name="comment[text]" value="<%= comment.text %>"><br>
+				<!--<input class="form-control" type="text" name="comment[author]" placeholder="Author"><br><hr>-->
+				
+				<input class="form-control btn btn-primary btn-block" type="submit" value="SUBMIT">
+			</form>
+			<a href="/">Go Back</a>
+		</div>
+	</div>
+</body>
+</html>

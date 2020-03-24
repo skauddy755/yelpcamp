@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MoreInfo_Yelpcamp</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="/stylesheet/main.css">
+	<style type="text/css">
+		#u{
+			height: 70px;
+		}
+	</style>
+	<script type="text/javascript"></script>
+
+						<input class="form-control" type="text" name="question[statement]" placeholder="Type in the Question statement...">
+                        <hr>
+
+                        <input class="form-control" type="text" name="question[A]" placeholder="option-A">
+                        <input class="form-control" type="text" name="question[B]" placeholder="option-B">
+                        <input class="form-control" type="text" name="question[C]" placeholder="option-C">
+                        <input class="form-control" type="text" name="question[D]" placeholder="option-D"><br>
+
+                        <fieldset>
+                            <legend>Select the correct Answer :</legend>
+                            <input class="form-control" id="A" type="radio" name="question[correctOpt]" value="A"><label for="A">option-A</label>
+                            <input class="form-control" id="B" type="radio" name="question[correctOpt]" value="B"><label for="B">option-B</label>
+                            <input class="form-control" id="C" type="radio" name="question[correctOpt]" value="C"><label for="C">option-C</label>
+                            <input class="form-control" id="D" type="radio" name="question[correctOpt]" value="D"><label for="D">option-D</label>
+                        </fieldset><br>
+                        <input class="btn btn-lg btn-block btn-primary" type="submit" value="SUBMIT POST">
+
+	                        <p id="A" class="btn btn-default btn-large btn-block option"><b>A: </b><%= ques.A %></p>
+		                    <p id="B" class="btn btn-default btn-large btn-block option"><b>B: </b><%= ques.B %></p>
+		                    <p id="C" class="btn btn-default btn-large btn-block option"><b>C: </b><%= ques.C %></p>
+		                    <p id="D" class="btn btn-default btn-large btn-block option"><b>D: </b><%= ques.D %></p>
+</head>
+<body>
+
+</body>
+</html>

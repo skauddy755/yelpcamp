@@ -18,8 +18,11 @@ var express 		= require("express"),
 seedDB();
 //console.log(__dirname);
 
-mongoose.connect("mongodb://localhost/yelpcamp",{useUnifiedTopology:true, useNewUrlParser:true});
-
+//mongoose.connect("mongodb://localhost/yelpcamp",{useUnifiedTopology:true, useNewUrlParser:true});
+mongoose.connect("mongodb+srv://SandAuddy755:ska755dog@cluster0-5kx9l.mongodb.net/test?retryWrites=true&w=majority",{
+	useUnifiedTopology:true,
+	useNewUrlParser:true
+});
 
 var app = express();
 
